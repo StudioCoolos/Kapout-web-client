@@ -4,6 +4,7 @@ import Orientation from '@/components/Drive.vue'
 import OrientationBlocker from '@/components/OrientationBlocker.vue'
 import allPermissions from '@/utils/permissions.js'
 import { ref } from 'vue'
+import Cables from '@/components/Cables.vue'
 
 const permissionsAccepted = ref(false)
 
@@ -21,11 +22,12 @@ function handlePermissionClick() {
 
 <template>
 	<OrientationBlocker />
-	<div v-if="permissionsAccepted" class="rotated-content">
+	<!--	<div v-if="permissionsAccepted">
 		<Motion />
 		<Orientation />
 	</div>
-	<button v-else @click="handlePermissionClick">Ask permissions</button>
+	<button v-else @click="handlePermissionClick">Ask permissions</button>-->
+	<Cables />
 </template>
 
 <style scoped>
