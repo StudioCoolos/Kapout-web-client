@@ -1,6 +1,7 @@
 <script setup>
 import Motion from '@/components/Strike.vue'
 import Orientation from '@/components/Drive.vue'
+import Screw from '@/components/Screw.vue'
 import OrientationBlocker from '@/components/OrientationBlocker.vue'
 import allPermissions from '@/utils/permissions.js'
 import { ref } from 'vue'
@@ -24,8 +25,9 @@ function handlePermissionClick() {
 	<div v-if="permissionsAccepted" class="rotated-content">
 		<Motion />
 		<Orientation />
+		<Screw />
 	</div>
-	<button v-else @click="handlePermissionClick">Ask permissions</button>
+	<button v-else @click="handlePermissionClick" class="permission-button">Ask permissions</button>
 </template>
 
 <style scoped>
@@ -35,5 +37,13 @@ function handlePermissionClick() {
 	position: relative;
 	width: 100vh;
 	height: 100vw;
+}
+
+.permission-button {
+	position: absolute;
+	margin: auto;
+	inset: 0;
+	width: 50%;
+	height: 20%;
 }
 </style>
